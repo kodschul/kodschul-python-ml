@@ -1,0 +1,5 @@
+text,label
+"I love machine learning and data science",positive
+"Python is great for data analysis",positive
+"I dislike bugs in code",negative
+"Debugging code can be frustrating",negative
