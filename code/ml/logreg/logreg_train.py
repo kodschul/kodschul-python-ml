@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score, accuracy_score
+import joblib 
 
 # 1. Daten laden
 df = pd.read_csv("../data/titanic_train.csv")
@@ -51,3 +52,6 @@ print(model_test_df)
 accuracy = accuracy_score(y_test, y_pred)
 
 print(f"Accuracy: {round(accuracy*100, 2)}%")
+
+# 6. Dump training
+joblib.dump(model, "../data/models/titanic.model")
