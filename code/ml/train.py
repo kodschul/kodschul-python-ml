@@ -9,7 +9,7 @@ df = pd.read_csv("data/people_weight_stats.csv")
 X = df["Height"]
 y = df['Weight']
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=50)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=50)
 # print(X_test, y_test)
 
 
