@@ -12,6 +12,8 @@ print(f"{len(df)} Data loaded for training")
 X = df[["Height", "Age"]]
 y = df['Weight']
 
+
+
 # 3. Test train split
 print("Test splitting....")
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=10)
@@ -23,28 +25,28 @@ lin_reg.fit(X_train, y_train)
 
 # 5. Model Bewertung 
 print("Testing model")
-y_pred = lin_reg.predict(X_test)
+y_pred = lin_reg.predict(X_train)
 
-model_test_df = pd.DataFrame()
-
-
-model_test_df["Height"] = X_test["Height"]
-model_test_df["Age"] = X_test["Age"]
-model_test_df["Weight (Predicted)"] = y_pred
-model_test_df["Weight (Actual)"] = y_test
-print(model_test_df)
+# model_test_df = pd.DataFrame()
 
 
-r2 = r2_score(y_test, y_pred)
-mae = mean_absolute_error(y_test, y_pred)
-# accuracy = accuracy_score(y_test, y_pred)
-print(f"R^2: {r2:.2f}")
-print(f"MAE: {mae}")
+# model_test_df["Height"] = X_test["Height"]
+# model_test_df["Age"] = X_test["Age"]
+# model_test_df["Weight (Predicted)"] = y_pred
+# model_test_df["Weight (Actual)"] = y_test
+# print(model_test_df)
+
+
+# r2 = r2_score(y_test, y_pred)
+# mae = mean_absolute_error(y_test, y_pred)
+# # accuracy = accuracy_score(y_test, y_pred)
+# print(f"R^2: {r2:.2f}")
+# print(f"MAE: {mae}")
 
 # print(f"Accuracy: {accuracy}%")
 
-plt.scatter(X_test["Height"], y_test, color="green")
-plt.scatter(X_test["Height"], y_pred, color="blue")
+plt.scatter(X_train["Height"], y_train, color="green")
+plt.scatter(X_train["Height"], y_pred, color="blue")
 plt.show()
 exit()
 # print(model_test_df)

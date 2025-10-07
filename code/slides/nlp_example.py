@@ -19,7 +19,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score
 
 # Load small text dataset
-def load_texts(path='data/tiny_texts.csv'):
+def load_texts(path='../data/tiny_texts.csv'):
     return pd.read_csv(path)
 
 # Train classifier
